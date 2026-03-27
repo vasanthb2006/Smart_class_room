@@ -1,0 +1,134 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --bg-primary: #f8f7ff;
+    --bg-card: #ffffff;
+    --text-primary: #1e1b4b;
+    --text-secondary: #6b7280;
+    --border: #e5e7eb;
+    --brand: #6366f1;
+  }
+
+  .dark {
+    --bg-primary: #0f0e1a;
+    --bg-card: #1a1827;
+    --text-primary: #f1f0ff;
+    --text-secondary: #9ca3af;
+    --border: #2d2b45;
+    --brand: #818cf8;
+  }
+
+  * {
+    @apply transition-colors duration-150;
+  }
+
+  body {
+    @apply bg-[var(--bg-primary)] text-[var(--text-primary)] font-body;
+    @apply min-h-screen;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display;
+  }
+}
+
+@layer components {
+  .card {
+    @apply bg-[var(--bg-card)] rounded-2xl shadow-card border border-[var(--border)];
+    @apply transition-all duration-200;
+  }
+
+  .card-hover {
+    @apply hover:shadow-card-hover hover:-translate-y-0.5;
+  }
+
+  .btn-primary {
+    @apply bg-brand-600 hover:bg-brand-700 text-white font-display font-semibold;
+    @apply px-5 py-2.5 rounded-xl;
+    @apply transition-all duration-200 active:scale-95;
+    @apply focus:outline-none focus:ring-2 focus:ring-brand-500 focus:ring-offset-2;
+    @apply disabled:opacity-60 disabled:cursor-not-allowed disabled:active:scale-100;
+  }
+
+  .btn-secondary {
+    @apply bg-[var(--bg-primary)] hover:bg-[var(--border)] text-[var(--text-primary)];
+    @apply font-display font-semibold px-5 py-2.5 rounded-xl border border-[var(--border)];
+    @apply transition-all duration-200 active:scale-95;
+    @apply focus:outline-none focus:ring-2 focus:ring-brand-500 focus:ring-offset-2;
+  }
+
+  .btn-danger {
+    @apply bg-red-600 hover:bg-red-700 text-white font-display font-semibold;
+    @apply px-5 py-2.5 rounded-xl;
+    @apply transition-all duration-200 active:scale-95;
+  }
+
+  .input {
+    @apply w-full bg-[var(--bg-primary)] border border-[var(--border)] rounded-xl;
+    @apply px-4 py-2.5 font-body text-[var(--text-primary)] placeholder-[var(--text-secondary)];
+    @apply focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-transparent;
+    @apply transition-all duration-200;
+  }
+
+  .label {
+    @apply block text-sm font-semibold text-[var(--text-primary)] mb-1.5 font-display;
+  }
+
+  .badge {
+    @apply inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-xs font-semibold font-mono;
+  }
+
+  .badge-success {
+    @apply badge bg-emerald-100 text-emerald-700 dark:bg-emerald-900/30 dark:text-emerald-400;
+  }
+
+  .badge-warning {
+    @apply badge bg-amber-100 text-amber-700 dark:bg-amber-900/30 dark:text-amber-400;
+  }
+
+  .badge-danger {
+    @apply badge bg-red-100 text-red-700 dark:bg-red-900/30 dark:text-red-400;
+  }
+
+  .badge-info {
+    @apply badge bg-brand-100 text-brand-700 dark:bg-brand-900/30 dark:text-brand-400;
+  }
+
+  .badge-neutral {
+    @apply badge bg-gray-100 text-gray-600 dark:bg-gray-800 dark:text-gray-400;
+  }
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--border); border-radius: 10px; }
+::-webkit-scrollbar-thumb:hover { background: var(--brand); }
+
+/* File input */
+input[type="file"]::file-selector-button {
+  @apply btn-primary cursor-pointer mr-3;
+  padding: 6px 14px;
+  font-size: 13px;
+}
+
+/* Animations */
+.animate-stagger > * {
+  animation: slideUp 0.4s ease both;
+}
+.animate-stagger > *:nth-child(1) { animation-delay: 0.05s; }
+.animate-stagger > *:nth-child(2) { animation-delay: 0.1s; }
+.animate-stagger > *:nth-child(3) { animation-delay: 0.15s; }
+.animate-stagger > *:nth-child(4) { animation-delay: 0.2s; }
+.animate-stagger > *:nth-child(5) { animation-delay: 0.25s; }
+.animate-stagger > *:nth-child(6) { animation-delay: 0.3s; }
+.animate-stagger > *:nth-child(7) { animation-delay: 0.35s; }
+.animate-stagger > *:nth-child(8) { animation-delay: 0.4s; }
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(14px); }
+  to { opacity: 1; transform: translateY(0); }
+}
