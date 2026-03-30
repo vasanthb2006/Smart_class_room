@@ -3,8 +3,7 @@
   "outputDirectory": "dist",
   "installCommand": "npm install",
   "env": {
-    "VITE_SUPABASE_URL": "https://aclmeegzzbljxkzqsqwl.supabase.co",
-    "VITE_SUPABASE_ANON_KEY": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFjbG1lZWd6emJsanhrenFzcXdsIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzQyNDMxMTIsImV4cCI6MjA4OTgxOTExMn0.rxYMtRNU8vB3zHGxpGG8x3gGbUJXVlEBS7NrysTqlaw"
-"
+    "VITE_SUPABASE_URL": "@vite_supabase_url",
+    "VITE_SUPABASE_ANON_KEY": "@vite_supabase_anon_key"
   }
 }
